@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Blog Do C</title>
+</head>
+<body bgcolor="darkgrey">
+	<font size="25"><p align="center"><b>Linguagem C</b></p></font>
+	<br>
+	<br>
+	<p>1-Introdução:
+O que é C?
+C é uma linguagem de programação de computadores: É possível usá-la para criar
+um conjunto de instruções para que o computador possa executar. Isso significa que você
+pode usá-la para criar listas de instruções para um computador seguir. A linguagem C é uma
+das milhares de linguagens de programação atualmente em uso. Desenvolvida em 1972 por
+Dennis Ritchie no Bell Lab para uso no sistema operacional Unix, foi amplamente aceita por
+oferecer aos programadores o máximo em controle e eficiência. Existe há várias décadas e
+ganhou ampla aceitação por oferecer aos programadores o máximo em controle e eficiência.
+ A linguagem C foi criada com o objetivo principal em mente: facilitar a criação de
+programas extensos com menos erros, recorrendo ao paradigma da programação algorítmica
+ou procedimental. [, mas sobrecarregando menos o autor do compilador, cujo trabalho
+complica-se ao ter de realizar as características complexas da linguagem.</p>
+Motivação:
+<p>Por ser uma linguagem poderosa, robusta, flexível e madura, conhecer todos os seus
+detalhes, “truques” e “armadilhas” requer um estudo criterioso e profundo. Mas o C é uma
+linguagem de sintaxe simples e elegante que permite rápido entendimento pelo programador
+iniciante. Desde sua criação, o C tornou-se uma linguagem popular tanto entre
+programadores profissionais quanto entre os iniciantes. É a linguagem de programação
+preferida para o desenvolvimento de sistemas e softwares de base, apesar de também ser
+usada para desenvolver programas de computador. No meio acadêmico, é amplamente
+utiliza para desenvolvimento de pesquisas científicas e como instrumento de aprendizado
+para o desenvolvimento de algoritmos.</p>
+<p>A linguagem C é amplamente utilizada no meio acadêmico.
+Somente para exemplificar o quanto a linguagem C é difundida, podemos citar
+alguns softwares escritos em C: Matlab, Windows, Kernel do Linux, Nedit (editor de texto),
+Octave (similar do Matlab em código aberto), o servidor de vídeo RI, Skype (escrito em
+C/C++) e Network Simulator (NS2).</p>
+2-Sintaxe:
+<p>A sintaxe são regras detalhadas para cada construção válida.
+Para que o programa criado seja executado de maneira correta, é necessário seguir a sintaxe
+própria da linguagem.</p>
+<p>Identificadores: É o nome dado pelo programador a um objeto, que será utilizado para que
+este possa ser manipulado durante o programa.
+Exemplo: a, tamanho, idade, SomaVetores, ..
+Ao declarar um identificador você dá um tipo que determina como os valores de
+dados serão representados, que valores podem expressar, e que tipo de operações você pode
+executar com estes valores. È importante ressaltar que em C letras maiúsculas diferem das
+minúsculas (a linguagem é Case Sensitive).</p>
+<p>Tipos definem as propriedades dos dados manipulados em um programa. Variáveis ficam
+armazenadas de acordo com suas propriedades de informação.</p>
+<p>Int – para armazenamento de qualquer número inteiro negativo, nulo ou positivo. Ocupa 2
+bytes (long int 4 bytes) de memória. Exemplo:- 5, 0, 2
+Float – para armazenar qualquer número real negativo, positivo ou nulo. Ocupa 4 bytes
+(doublé 8 bytes) de memória. Exemplo:- 1.78, 98, 0
+Char – usada para se armazenar quaisquer letras e números (conjunto de caracteres
+alfanuméricos). Ocupa 1 byte de memória. Exemplo: ”A”,”B”
+As declarações expressam as partes do programa, podendo dar significado a umidentificador,
+alocar memória, definir conteúdo inicial, definir funções.</p>
+
+ <p><p>As funções especificam as ações que um programa executa quando roda.
+Uma função importante em todo programa em C é a função main (cuja tradução é
+principal). Esta será sempre a primeira função do programa a ser executada.
+ main ( )</p>
+
+2-Variáveis:
+<p>É um local na memória principal, isto é, um endereço que armazena um conteúdo
+(informação) que pode ser modificado.
+Em C, não é possível ter variáveis que comecem com dígito e espaços não são
+permitidos.
+Exemplos de nomes de variáveis indevidas: 2w, peso do aluno, sal/hora.
+Observação:Em C usualmente são utilizadas variáveis em minúsculo e constantes em
+maiúsculos.</p>
+3-Operadores: 
+<br>
+= atribuição<br>
+!= diferente<br>
+<= Menor igual<br>
+>= Maior igual<br>
+== igual<br>
+% Resto da divisão entre inteiros <br>
+<br>Para as variáveis, devem ser feitas no início do programa (ou de um bloco) as
+declarações (de tipo) de variáveis.
+Declarada uma variável, toda vez que ela for referenciada em qualquer comando do
+programa, o computador vai trabalhar com o conteúdo de seu endereço, que é o valor da
+variável.
+Uma variável não pode ter o mesmo nome de uma palavra-chave de C, como por
+exemplo: main, cout, int, float, char, short, return, case, void.
+As variáveis só podem armazenar informações ou dados sempre de um mesmo tipo
+(inteiro, real, caractere ou char).</br>
+
+
+<br>Forma de declaração de variáveis em linguagem C:</br>
+(tipo da variavel)  (variavel 1),(variavel 2)
+<br><br>
+
+Operadores Aritméticos:<br><br>
+% o Resto da divisão 4<br>
+-  Inversão do sinal 1<br>
++  Manutenção do sinal 1<br>
+--  Decremento 2<br>
+++  Incremento 2<br>
+/  Divisão 3<br>
+*  Multiplicação 3<br>
+-  Subtração 5<br>
++  Adição 5<br>
+<br>
+4-Comandos de Entrada e Saída<br>
+4.1-Comando de Imprensão printf<br>
+<br>
+Através da função pré-definida printf(), cujo protótipo está contido também no
+arquivo stdio.h. Sua sintaxe é a seguinte:
+printf( “Expressão” , lista de argumentos );<br>
+Sintaxe:
+<br>
+"expressão" Mensagens que serão exibidas.<br>
+"lista de argumentos" pode conter identificadores de variáveis, expressões<br> aritméticas ou
+lógicas e valores constantes.<br>
+Impressão de Tipos de Dados<br>
+<br><br>Código Tipo Elemento armazenado<br>
+%c char um único caractere<br>
+%d ou %i int um inteiro<br>
+%f float um número em ponto flutuante<br>
+%lf double ponto flutuante com dupla<br>
+precisão
+%e float ou double um número na notação científica<br>
+%s ......... uma cadeia de caracteres <br>
+
+<br>Através da função pré-definida printf(), cujo protótipo está contido também no
+arquivo stdio.h. Sua sintaxe é a seguinte:<br>
+printf( “Expressão” , lista de argumentos );<br>
+<pre><code>
+4.2-Leitura de dados - scanf()
+Ela é o complemento de printf() e nos permite ler dados formatados da
+entrada padrão (teclado). Sua sintaxe:
+scanf("expressão de controle", argumentos);
+Exemplo:
+int m;
+scanf (“%d”,&m); 
+
+5-Comando Condicional – if/else
+5.1-Comando condicional if
+O comando if é uma estrutura de decisão que permite ou não que uma seqüência de
+comandos seja executada (ou não executada)., dependendo do resultado de uma condição
+pré-estabelecida. Sua sintaxe é:
+if (expressão)
+{
+<sequência de comandos>
+}
+Ou
+if (expressão) <único comando>;
+A expressão sempre será avaliada logicamente (verdadeiro ou falso), correspondendo
+ao FALSO o valor zero (==0) e os demais ao VERDADEIRO (!=0). 
+		 
+</code>
+</body>
+</html
