@@ -45,7 +45,8 @@ function calcula(){
 	for(cont= 1;cont <= tempo;cont++){
 		saldo = capital*Math.pow(1+(juros/100),cont);
 		acumulo = document.getElementById("pelotempo");
-		acumulo.innerHTML += "Capital durante o "+cont+"°" +"Mês é: "+saldo.+.toFixed(2)"." + "<br>";
+		var fixed = saldo.toFixed(2);
+		acumulo.innerHTML += "Capital durante o "+cont+"°" +"Mês é: "+fixed.+"." + "<br>";
 		document.body.appendChild(acumulo);
 	}
 
