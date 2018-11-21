@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width">
+
+    <title>Pedra, Papel, Tesoura</title>
+
+    <style>
+       *{margin:0;padding:0;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}::selection{background:#fb9fe5;text-shadow:none}a{color:#0088CC;text-decoration:none;outline:0}a:hover{color:#005580}a img{border:none}img{max-width:100%}html{font-size:100%}body{padding:5%;font:300 1.25em/1.6 monospace;background:#fff;color:#000;}h1{font-family:"ComicSans",sans-serif;line-height:1;font-weight:300;margin-bottom:1em;}.game{padding:2em;background:#eee;}
+    </style>
+</head>
+<body>
+
+<h1>Pedra, Papel, Tesoura</h1>
+
+<div class="game">
+
+    <script>
+        // EScolha do Usuario
+        var userChoice = prompt("Escolha entre Pedra, Papel, Tesoura!!");
+        if (! userChoice) {
+            // Escolha Errada
+            document.write("<p>Jogador, Aperte F5, E Escolha Uma Das Opções.</p>");
+        } else {
+            // Mostre a Escolha do Usuario
+            document.write("<p>Jogador:" + " " + userChoice + "</p>");
+        }
+        // Escolha do comp
+        var computerChoice = Math.random();
+        if (computerChoice < 0.34) {
+            computerChoice = "Pedra";
+        } else if(computerChoice <= 0.67) {
+            computerChoice = "Papel";
+        } else {
+            computerChoice = "Tesoura";
+        }
+        // Mostrar Escolha do Comp
+        document.write("<p>Computador:" + " " + computerChoice + "</p>");
+        // COmparaçao Usuario vs Comp
+        var compare = function(choice1,choice2) {
+            if (choice1 === choice2) {
+                return "Foi um Empate!";
+            }
+            if (choice1 === "Pedra") {
+                if (choice2 === "Tesoura") {
+                    // Pedra vence
+                    return "Você Venceu!";
+                } else {
+                    // papel Vence
+                    return "Você Perdeu.Tente Novamente";
+                }
+            }
+            if (choice1 === "Papel") {
+                if (choice2 === "Pedra") {
+                    // papel vence
+                    return "Você Venceu!";
+                } else {
+                    // tesoura vence
+                    return "Você Perdeu! Tente Novamente.";
+                }
+            }
+            if (choice1 === "Tesoura") {
+                if (choice2 === "Pedra") {
+                    // pedra vence
+                    return "Você Perdeu! Tente Novamente.";
+                } else {
+                    // Tesoura vence
+                    return "Você Venceu!";
+                }
+            }
+        };
+        // funçao para comparaçao
+        var results = compare(userChoice,computerChoice);
+        // Mostra resultados
+        document.write("<br><hr><br>" + results);
+    </script>
+
+</div>
+
+</body>
+</html>
