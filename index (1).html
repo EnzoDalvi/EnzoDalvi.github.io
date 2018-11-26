@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+   integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+   crossorigin=""/>
+   
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+   integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+   crossorigin=""></script>
+
+</head>
+
+<body>
+	
+	<div id="mapid" style="height :500px"></div>
+	
+	<p><b><font size="5">Dados Para o Segundo Ponto</font></b></p>
+	Latitude:<br><input type="text" id="latitude2"><br>
+	Longitude:<br><input type="text" id="longitude2"><br>
+	<input type="button" id="ir" value="Calcule"><br>
+	A Distancia entre os Dois Pontos é:<p id="dis"></p>
+	<script>
+
+	var mymap = L.map('mapid').setView([0, 0], 13);
+
+		L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox.streets',
+    accessToken: 'pk.eyJ1IjoiZW56b2RhbHZpIiwiYSI6ImNqb2U1cDZxZTE1N2Mzb3F1eDBsc240b28ifQ.Gf0YLjlXqSS6O6XWmnABgw'
+    
+}).addTo(mymap);
+
+		navigator.geolocation.getCurrentPosition(f1);
+		//Funcionou
+		function f1(pos){
+			console.log(pos);
+			var lat = pos.coords.latitude;
+			var long = pos.coords.longitude;
+			mymap.setView([lat,long],13)
+		}
+	var distancia;
+
+//conferindo a permissão
+navigator.geolocation.getCurrentPosition(mostrarPosicao,liberaAe)
+
+//liberado
+function mostrarPosicao(pos){
+
+	var lat1 = pos.coords.latitude;
+	var lon1 = pos.coords.longitude;
+	mymap.setView([lat1, lon1], 13);//mostrando a posição inicial
+
+	var marker = L.marker([lat1, lon1]).addTo(mymap);
+
+	marker.bindPopup("<b>Você está aqui!").openPopup();//pop-up pro marcador
+	console.log(lat1,lon1)
+
+	function onMapClick(e) {
+   			alert("Você Clicou no Mapa na Posiçao: (Copie e Cole Esses Dados Nos Inputs abaixo...)" + e.latlng);
+		}
+		mymap.on('click', onMapClick);
+
+	document.getElementById('ir').addEventListener("click",seguir);//evento pro botao
+
+	function seguir() {
+
+		var lat2 = document.getElementById('latitude2').value;//pega os valores inseridos
+		var lon2 = document.getElementById('longitude2').value;
+		if(lat2=="" || lon2==""){alert("Insira as coordenadas!")}
+		else{
+
+		lat2 = lat2.replace(",","."); //troca a virgula por ponto
+		lon2 = lon2.replace(",",".");
+
+		console.log(lat2,lon2);
+
+		mymap.setView([lat2, lon2], 13); //muda a vista 
+
+		var haversine = function(lat1, lon1, lat2, lon2) { //formula para achar a distancia
+        var deg2rad = 0.017453292519943295; 
+        var cos = Math.cos;
+        lat1 *= deg2rad;
+        lon1 *= deg2rad;
+        lat2 *= deg2rad;
+        lon2 *= deg2rad;
+        var diam = 12742; 
+        var dLat = lat2 - lat1;
+        var dLon = lon2 - lon1;
+        var a = ( (1 - cos(dLat)) +
+                (1 - cos(dLon)) * cos(lat1) * cos(lat2)) / 2;
+
+        distancia =  (diam * Math.asin(Math.sqrt(a))).toFixed(3);
+
+        document.getElementById("dis").innerHTML = distancia;
+
+    	};
+
+    	haversine(lat1,lon1,lat2,lon2);
+
+		var marker = L.marker([lat2, lon2]).addTo(mymap);
+		marker.bindPopup("Este é o lugar que você marcou! <br> Distância: " + distancia + " Km." ).openPopup();//criando marcador pro ponto inserido
+
+	    var polygon = L.polygon([//criando a reta
+		    [lat1, lon1],
+		    [lat2, lon2],
+		]).addTo(mymap);
+		}
+	}
+
+}
+
+//Localização bloqueada
+function liberaAe(){alert("Libere a Localização.")}
+	</script>
+
+	
+
+
+</body>
+</html>
