@@ -1,0 +1,13 @@
+C:\Users\enzod\Desktop\ED-EnzoDalvi\bin\Debug\netcoreapp3.1\ED-EnzoDalvi.exe
+C:\Users\enzod\Desktop\ED-EnzoDalvi\bin\Debug\netcoreapp3.1\ED-EnzoDalvi.deps.json
+C:\Users\enzod\Desktop\ED-EnzoDalvi\bin\Debug\netcoreapp3.1\ED-EnzoDalvi.runtimeconfig.json
+C:\Users\enzod\Desktop\ED-EnzoDalvi\bin\Debug\netcoreapp3.1\ED-EnzoDalvi.runtimeconfig.dev.json
+C:\Users\enzod\Desktop\ED-EnzoDalvi\bin\Debug\netcoreapp3.1\ED-EnzoDalvi.dll
+C:\Users\enzod\Desktop\ED-EnzoDalvi\bin\Debug\netcoreapp3.1\ED-EnzoDalvi.pdb
+C:\Users\enzod\Desktop\ED-EnzoDalvi\obj\Debug\netcoreapp3.1\ED-EnzoDalvi.csprojAssemblyReference.cache
+C:\Users\enzod\Desktop\ED-EnzoDalvi\obj\Debug\netcoreapp3.1\ED-EnzoDalvi.AssemblyInfoInputs.cache
+C:\Users\enzod\Desktop\ED-EnzoDalvi\obj\Debug\netcoreapp3.1\ED-EnzoDalvi.AssemblyInfo.cs
+C:\Users\enzod\Desktop\ED-EnzoDalvi\obj\Debug\netcoreapp3.1\ED-EnzoDalvi.csproj.CoreCompileInputs.cache
+C:\Users\enzod\Desktop\ED-EnzoDalvi\obj\Debug\netcoreapp3.1\ED-EnzoDalvi.dll
+C:\Users\enzod\Desktop\ED-EnzoDalvi\obj\Debug\netcoreapp3.1\ED-EnzoDalvi.pdb
+C:\Users\enzod\Desktop\ED-EnzoDalvi\obj\Debug\netcoreapp3.1\ED-EnzoDalvi.genruntimeconfig.cache
