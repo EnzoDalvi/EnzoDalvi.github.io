@@ -10,6 +10,6 @@ function logar(){
     }
    else //if(username == userc && senha == senhac){
         window.alert("Você está logado")  
-        location.replace("/home_folder/pag_home.html")
+        location.replace("https://enzodalvi.github.io/Projeto_Site/home_folder/pag_home.html")
    // }
 }   
